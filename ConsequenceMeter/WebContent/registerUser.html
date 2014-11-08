@@ -3,52 +3,56 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Register User</title>
-<link rel="stylesheet" type="text/css" href="css/RegisterForm.css"> 
+
 </head>
 <body>
 	<form id=payment>
 		<fieldset>
-			<legend>Personal details</legend>
-			<ol>
-				<li>
-					<label for=name>Name</label>
-					<input id=name name=name type=text placeholder="First and last name" required autofocus />
-				</li>
-				<li>
-					<label for=email>Email</label>
-					<input id=email name=email type=email placeholder="example@domain.com" required />
-				</li>
-				<li>
-					<label for=age>Age</label>
-					<input id=age name=age type=text required/>
-				</li>
-				<li>
-					<label for=ssn>SSN</label>
-					<input id=ssn name=ssn type=text />
-				</li>
-				<li>
-					<label for=password>Password</label>
-					<input id=password name=password type=password required/>
-				</li>
-				<li>
-					<label for=confirmPassword>Confirm Password</label>
-					<input id=confirmPassword name=confirmPassword type=password required/>
-				</li>
-			</ol>
+			<legend><h4>Personal details</h4></legend>
+				<table border="0">
+					<tr align="left">				
+					<th align="left"><label for=name>Name: </label></th>
+					<th align="left"><input id=name name=name type=text placeholder="First and last name" required autofocus /></th>
+					</tr>
+					<tr align="left">
+					<th align="left"><label for=email>Email: </label></th>
+					<th align="left"><input id=email name=email type=email placeholder="example@domain.com" required /></th>
+					</tr>
+					<tr align="left">
+					<th align="left"><label for=age>Age: </label></th>
+					<th align="left"><input id=age name=age type=text required/></th>
+					</tr>
+					<tr align="left">
+					<th align="left"><label for=ssn>SSN: </label></th>
+					<th align="left"><input id=ssn name=ssn type=text /></th>
+					</tr>
+					<tr align="left">
+					<th align="left"><label for=password>Password: </label></th>
+					<th align="left"><input id=password name=password type=password placeholder="******" required/></th>
+					</tr>
+					<tr align="left">
+					<th align="left"><label for=confirmPassword>Confirm Password: </label></th>
+					<th align="left"><input id=confirmPassword name=confirmPassword type=password placeholder="******" required/></th>
+					</tr>
+				</table>
 		</fieldset>
 		<fieldset>
-			<legend>Financial Details</legend>
-			<ol>
-				<li>
-					<label for=income>Income</label>
-					<input id=income name=income type=text />
-				</li>
-				
-			</ol>
+			<legend><h4>Financial Details</h4></legend>
+			<table border="0">
+				<tr align="left">
+				<th align="left"><label for=income>Monthly Income: </label></th>
+				<th align="left"><input id=income name=income type=text placeholder="$"/></th>
+				</tr>
+				<tr>	
+				<th align="left"><label for=income >Monthly Recurring Expenses: </label></th>
+				<th align="left"><input id=income name=income type=text placeholder="$"/></th>
+				</tr>
+			</table>
 		</fieldset>
-		<fieldset>
+
 			<button type=submit>Register</button>
-		</fieldset>
+			<input type="reset" name="reset" id="reset" value="Reset"/>
+
 	</form>
 </body>
 </html>
