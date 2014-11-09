@@ -3,9 +3,10 @@
 <head>
 <script type='text/javascript' src='./js/jquery-1.11.1.min.js'></script>
 <script type='text/javascript' src='./js/jquery-ui.min.js'></script>
-<script type='text/javascript' src='./js/jquery-ui-slider-pips.js'></script>
-<link rel='stylesheet' type='text/css' href='./css/jquery-ui-slider-pips.css'/>
-
+<!-- <script type='text/javascript' src='./js/jquery-ui-slider-pips.js'></script>
+<link rel='stylesheet' type='text/css' href='./css/jquery-ui-slider-pips.css'/> -->
+<script type='text/javascript' src='./js/jquery.fractionslider.js'></script>
+<link rel='stylesheet' type='text/css' href='./css/fractionslider.css'/>
 
 
 <script type='text/javascript'>
@@ -13,6 +14,8 @@ $(document).ready(function(){
 	
 	$('#downPaymentRow').hide();
 	$('#emiRow').hide(); 
+	//first we need a slider to work with
+
 	
 });
 function payModeSelected(){
@@ -31,7 +34,10 @@ function payModeSelected(){
 		$('#downPaymentRow').hide();
 		$('#emiRow').hide();
 	}
+
 }	
+
+
 </script>
 <style type='text/css'>
 input[type=text]{width:260px;}
@@ -41,9 +47,10 @@ input[type=text]{width:260px;}
 </head>
 <body>
 
-<form id=consequenceMeter method='post' action='consequence.php'>
+<!-- <form id=consequenceMeter method='post' action='consequence.php'>
 <fieldset>
 <legend><h4>Enter Details</h4></legend>
+
 <table>
 <tr> 
 <th align='left'><label for=savings>Savings ($): </label></th>
@@ -79,7 +86,24 @@ input[type=text]{width:260px;}
 </tr>
 
 </table>
+
 </fieldset>
 </form>
+ -->
+ 
+<div class='slider'>
+<div class='slide'></div>
+<div class='slide'></div>
+<div class='fs_loader'></div>
+</div>
+
+
+<!-- <script type="text/javascript">
+//var $slider2 = $("#slider2").slider({ max: 20 , value: 10 });
+
+// and then we can apply pips to it!
+//$slider2.slider("pips");
+$('#slider2').slider().slider('pips').slider('float');
+</script> -->
 </body>
 </html>
