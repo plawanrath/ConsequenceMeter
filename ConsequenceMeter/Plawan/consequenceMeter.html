@@ -1,0 +1,87 @@
+<!DOCTYPE html con>
+<html>
+<head>
+<script type='text/javascript' src='./js/jquery-1.11.1.min.js'></script>
+<script type='text/javascript' src='./js/jquery-ui.min.js'></script>
+<script type='text/javascript' src='./js/jquery-ui-slider-pips.js'></script>
+<link rel='stylesheet' type='text/css' href='./css/jquery-ui-slider-pips.css'/>
+
+
+
+<script type='text/javascript'>
+$(document).ready(function(){
+	
+	$('#downPaymentRow').hide();
+	$('#emiRow').hide(); 
+	
+});
+function payModeSelected(){
+	var payMode = $('input[name=paymentMode]:checked', '#consequenceMeter').val();
+	if($(payMode)!=null && $.trim(payMode)=='bothPayModes'){
+		$('#downPaymentRow').show();
+		$('#emiRow').show();
+	}
+	else if($(payMode)!=null && $.trim(payMode)=='emiMode')
+	{
+		$('#emiRow').show();
+		$('#downPaymentRow').hide();
+	}
+	else
+	{
+		$('#downPaymentRow').hide();
+		$('#emiRow').hide();
+	}
+}	
+</script>
+<style type='text/css'>
+input[type=text]{width:260px;}
+</style>
+<meta charset='ISO-8859-1'>
+<title>Consequence Meter</title>
+</head>
+<body>
+
+<form id=consequenceMeter method='post' action='consequence.php'>
+<fieldset>
+<legend><h4>Enter Details</h4></legend>
+<table>
+<tr> 
+<th align='left'><label for=savings>Savings ($): </label></th>
+<th align='left'><input id=savings name=savings type=text placeholder='Enter savings till now ($)' required autofocus /></th>
+</tr>
+<tr> 
+<th align='left'><label for=miscExpenditure>Miscellaneous Expenditure ($): </label></th>
+<th align='left'><input id=miscExpenditure name=miscExpenditure type=text placeholder='Enter expenses other than recurring ($)' required /></th>
+</tr>
+
+<tr> 
+<th align='left'><label for=itemToBuy>What is the cost of the item you are planning to buy? ($): </label></th>
+<th align='left'><input id=itemToBuy name=itemToBuy type=text placeholder='Enter the cost of the item ($)' required /></th>
+</tr>
+
+<tr> 
+<th align='left'><label for=paymentMode>How are you planning to pay? </label></th>
+<td align='left'><input id=payFromSaving name=paymentMode type='radio' onclick='payModeSelected();' value='savMode'>Pay From Savings </td>
+<tr>
+<th></th><td align='left'><input id=payFromEmi name=paymentMode type='radio' onclick='payModeSelected();' value='emiMode'>Pay By EMI </td>
+</tr>
+<tr><th></th>
+<td align='left'><input id=payFromboth name=paymentMode type='radio' onclick='payModeSelected();' value='bothPayModes'>Pay From Savings and EMI </td>
+</tr>
+<tr id='emiRow'> 
+<th align='left'><label id=emiLabel for=emi>Enter Expected EMI ($):</label></th>
+<th align='left'><input id=emi name=emi placeholder='Enter the EMI ($)' type='text' required /></th>
+</tr>
+
+<tr id='downPaymentRow'> 
+<th align='left'><label id=downPaymentLabel for=downPayment>Enter Expected Down-payment ($):</label></th>
+<th align='left'><input id=downPayment name=downPayment placeholder='Enter the down-payment ($)' type='text' required /></th>
+</tr>
+
+</table>
+<button type=submit>Submit</button>
+</fieldset>
+</form>
+<a href="logout.php"> Logout </a>
+</body>
+</html>

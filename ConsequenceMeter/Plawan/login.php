@@ -5,7 +5,7 @@ if (!$_SESSION['Uid'] )
 	{
 		$e = $_POST['Email'];
 		$p = $_POST['Password'];
-		$query = sprintf("SELECT Uid FROM Users where Email = '%s' AND Password = '%s' LIMIT 1;", $e, $p);
+		$query = sprintf("SELECT * FROM Users where Email = '%s' AND Password = '%s' LIMIT 1;", $e, $p);
 		$result = mysql_query($query);
 		if(mysql_num_rows($result) != 1)
 		{
@@ -19,7 +19,10 @@ if (!$_SESSION['Uid'] )
 				$_SESSION['Uid'] = $row['Uid'];
 				$_SESSION['Email'] = $e;
 				$_SESSION['Name'] = $row['Name'];
-				show_userbox();
+				$_SESSION['RecExpense'] = $row['RecExpense'];
+				$_SESSION['Income'] = $row['Income'];
+				//show_userbox();
+				include "consequenceMeter.html";
 				}
 		}
 		else
@@ -32,5 +35,6 @@ else
 {
 	//user already logged in
 	show_userbox();
+	
 	}
 ?>
