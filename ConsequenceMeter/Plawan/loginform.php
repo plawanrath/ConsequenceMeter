@@ -1,31 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login to FinPact</title>
+</head>
+<body bgcolor="#F0F0F0">
+<table style="width:100%;background-image: url('./images/head1.png'); text-align: center; text-decoration: underline; color: #FFFFFF; font-size: 40px;">
+    <tr style="height: 150px; padding: 0px; border: 0px">
+        <td >Welcome to FinPact </td>
+        <td ></td>
+        <td align="right">
+            
+            <a href="register.html"><img style="width: 64px; height: 64px; padding: 2px; border: 0px" title="Register New User" src="./images/config-users.png"/></a>
+            
+            
+        </td>
+    </tr>
+</table>
+<br><br><br><br>
 <form name="login-form" id="login-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> 
-  <fieldset> 
-  <legend>Please login:</legend> 
-  <dl> 
-    <dt> 
-      <label title="Email">Email:
-      <input tabindex="1" accesskey="u" name="Email" type="text" maxlength="50" id="Email" /> 
-      </label> 
-    </dt> 
-  </dl> 
-  <dl> 
-    <dt> 
-      <label title="Password">Password:
-      <input tabindex="2" accesskey="p" name="Password" type="password" maxlength="15" id="Password" /> 
-      </label> 
-    </dt> 
-  </dl> 
-  <dl> 
-    <dt> 
-      <label title="Submit"> 
-      <input tabindex="3" accesskey="l" type="submit" name="cmdlogin" value="Login" /> 
-      </label> 
-    </dt> 
-  </dl> 
-  </fieldset> 
+<center>
+<fieldset style="width: 400px">
+<legend>Login</legend>
+<table>
+<tr>
+			<td> Email Id </td>
+			<td> <input type="email" name ="Email" placeholder="yourname@email.com" required autofocus>
+		</tr>
+		<tr>
+			<td> Password </td>
+			<td> <input type=password name ="Password" required>
+		</tr>
+		<tr>
+		</tr>
+		<tr>
+			<td>       <input tabindex="3" accesskey="l" type="submit" name="cmdlogin" value="Login" />  </td>
+			<td> <input type="reset" value = Refresh></td>
+		</tr>
+</table>
+</fieldset>
+</center>
 </form>
-<p><form action="register.php" method="post"> 
-<label title="Sign Up">
-<input tabindex="4" accesskey="i" type="Submit" name="SignUp" value="SignUp" />
-</label>
-</form></p>

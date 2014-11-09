@@ -39,17 +39,17 @@ if (isset($_POST['Name']) && !empty($_POST['Name']) && isset($_POST['Email']) &&
 	$res = mysql_query($query);
 	if ($res == TRUE)
 	{
-		echo "Awesome!!";
+		header('Location: loginform.php');
 		}
 		else{
-			echo "Oops!!";
+			header('Location: register.html');
 			}
-	echo "<a href='register.php'>Go Back</a>";
 	}
-	header('Location: ./register.php');
+	header('Location: loginform.php');
 	}
 else
 {
-	header('Location: ./register.php');
+	header('Location: loginform.php');
 	}
+header('Location: loginform.php');
 ?>

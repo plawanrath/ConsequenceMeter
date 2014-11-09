@@ -4,6 +4,7 @@ $email = $_SESSION['Email'];
 $name = $_SESSION['Name'];
 $income = $_SESSION['Income'];
 $recIncome = $_SESSION['RecExpense'];
+include "consequenceMeter.html";
 if (isset($_POST['savings']) && !empty($_POST['savings']) && isset($_POST['miscExpenditure']) && !empty($_POST['miscExpenditure']) && (isset($_POST['itemToBuy'])) && !empty($_POST['itemToBuy']))
 {
 	$savings = $_POST['savings'];
@@ -78,7 +79,8 @@ if (isset($_POST['savings']) && !empty($_POST['savings']) && isset($_POST['miscE
 		{
 			$cm = 0;
 			}
-		echo "<p>".$cm."</p>";
-		echo "<a href='consequenceMeter.html'>Back</a>";
+		unset($drain);
 	}
 ?>
+<meter id="meter" value="<?php echo $cm ?>" max="10" min="0" low="5" optimum="6" style="width:50%"> FinPact Meter</meter>
+<p><h3><?php echo $cm ?>/10</h3></p>
