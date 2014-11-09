@@ -34,23 +34,40 @@ function payModeSelected(){
 		$('#emiRow').hide();
 	}
 
-}	
-
+}
 
 </script>
 <style type='text/css'>
 input[type=text]{width:260px;}
+.right {
+    text-align: right;
+    float: right;
+}
+
 </style>
 <meta charset='ISO-8859-1'>
 <title>Consequence Meter</title>
 </head>
-<body>
+<body bgcolor="#F0F0F0">
 
+<table style="width:100%;background-image: url('./images/head1.png'); text-align: center; text-decoration: underline; color: #FFFFFF; font-size: 40px;">
+    <tr style="height: 150px; padding: 0px; border: 0px">
+        <td >Welcome to FinPact </td>
+        <td ></td>
+        <td align="right">
+            
+            <a href="logout.php"><img style="width: 50px; height: 40px; padding: 2px; border: 0px" title="Logout" alt="Register New User" src="./images/logout.png"/></a>
+            
+            
+        </td>
+    </tr>
+</table>
+<br>
 <form id=consequenceMeter method='post' action='consequence.php'>
 <fieldset>
 <legend><h4>Enter Details</h4></legend>
-
 <table>
+<tr></tr>
 <tr> 
 <th align='left'><label for=savings>Savings ($): </label></th>
 <th align='left'><input id=savings name=savings type=text placeholder='Enter savings till now ($)' required autofocus /></th>
@@ -93,10 +110,17 @@ input[type=text]{width:260px;}
 <th align='left'><label id=consequenceMeterlabel for=consequenceMeter>Consequence Factor:</label></th>
 <th align='left'><input id=consequenceMeter name=consequenceMeter type='text' /></th>
 <td><img alt="savingsInfo" src="./images/info.png" height="22px" width="22px" title='This reflects the consequence of purchasing the item on your current savings'/></td>
-</td>
+</tr>
+<tr></tr>
+<tr>
+<th>
+<button type=submit>Submit</button>
+</th>
+<th>
+<button type="reset">Refresh</button>
+</th>
 </tr>
 </table>
-
 </fieldset>
 </form>
 <!-- 

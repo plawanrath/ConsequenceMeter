@@ -2,13 +2,35 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login to FinPact</title>
 </head>
-<body>
-<form id=login>
+
+
+<body bgcolor="#F0F0F0">
+<!-- <div style="width: 100%; vertical-align: middle; height:150px; background-image: url('./images/head1.png'); text-align: center; text-decoration: underline; color: #FFFFFF; font-size: 40px; overflow: hidden;">
+Welcome to FinPact Meter
+<a href="register.php"> <img src="./images/config-users.png" border="0px" width="64px" height="64px" /> </a>
+</div>
+ -->
+<table style="width:100%;background-image: url('./images/head1.png'); text-align: center; text-decoration: underline; color: #FFFFFF; font-size: 40px;">
+    <tr style="height: 150px; padding: 0px; border: 0px">
+        <td >Welcome to FinPact </td>
+        <td ></td>
+        <td align="right">
+            
+            <a href="register.php"><img style="width: 64px; height: 64px; padding: 2px; border: 0px" title="Register New User" src="./images/config-users.png"/></a>
+            
+            
+        </td>
+    </tr>
+</table>
+
+<br><br><br><br>
+
+<form id=login name="login-form" id="login-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
 <center>
 <fieldset style="width: 400px">
-<legend>Login to Consequence Meter</legend>
+<legend>Login</legend>
 <table>
 <tr>
 			<td> Email Id </td>
@@ -22,7 +44,7 @@
 		</tr>
 		<tr>
 			<td> <input type="submit" value =Submit> </td>
-			<td> <input type="reset" value = Refresh> </td>
+			<td> <input type="reset" value = Refresh></td>
 		</tr>
 </table>
 </fieldset>
